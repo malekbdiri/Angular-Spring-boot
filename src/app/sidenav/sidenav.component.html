@@ -1,0 +1,29 @@
+<mat-nav-list>
+  <div class="logo py-4"></div>
+  <mat-divider></mat-divider>
+
+  <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/dashboard']">
+    <mat-icon>home</mat-icon>
+  </a>
+
+  <mat-expansion-panel class="custom-expansion-panel">
+    <mat-expansion-panel-header class="custom-expansion-header">
+      <mat-panel-title class="custom-panel-title">
+        AnnexeRPTC480
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <a mat-list-item class="sub-item" routerLinkActive="list-item-active" [routerLink]="['/creer-annexe']">
+      Créer Annexe
+    </a>
+    <a mat-list-item class="sub-item" routerLinkActive="list-item-active" [routerLink]="['/annexe-rptc480']">
+      Liste Annexe
+    </a>
+  </mat-expansion-panel>
+
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/annexe-rptc481']">AnnexeRPTC481</a>
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/annexe-rptc482']">AnnexeRPTC482</a>
+  <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/annexe-rptc483']">AnnexeRPTC483</a>
+</mat-nav-list>

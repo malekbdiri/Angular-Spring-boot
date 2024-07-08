@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-drawer {
+    width: 260px;
+  }
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-drawer {
+    background:  #0b0d26;
+    color: #94a3b8; 
+  }
+  .header-image {
+    width: 100%; 
+    height: auto;
+    max-height: 50vh; 
+    margin-bottom: 20px; 
+    object-fit: cover; 
+  }
+  
+  .content {
+    padding: 20px; 
+  }

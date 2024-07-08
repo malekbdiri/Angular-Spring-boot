@@ -1,0 +1,72 @@
+:host {
+  .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem; 
+    color: #818cf8; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+  }
+}
+
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+  img {
+    width: 200px;
+  }
+}
+
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+}
+
+.mat-list-item {
+  color: #94a3b8 !important;
+  font-size: 0.8rem;
+  height: 44px !important;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: #f2f5f7 !important;
+  }
+}
+
+.mat-subheader {
+  color: #818cf8;
+  font-size: 0.99rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.custom-expansion-panel {
+  background-color: inherit;
+  color: inherit;
+  box-shadow: none;
+  border: none;
+}
+
+.custom-expansion-header {
+  padding: 0 16px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-panel-title {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.custom-expansion-panel .mat-expansion-panel-content {
+  padding: 0;
+}
+
+.custom-expansion-panel .mat-expansion-panel-content .sub-item {
+  padding-left: 32px;
+}

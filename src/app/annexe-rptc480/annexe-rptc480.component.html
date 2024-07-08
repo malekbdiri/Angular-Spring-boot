@@ -1,0 +1,95 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+  
+    <div class="content">
+      <div class="form-container">
+        <div class="center-content">
+          <div>Choisir une date</div>
+          <input type="date" [(ngModel)]="selectedDate">
+        </div>
+        <div class="center-content">
+          <button mat-raised-button class="valider-button" (click)="getAnnexe480(12, 2023)">Valider</button>
+        </div>
+      </div>
+      <br>
+      <div *ngIf="donnee!=null" class="left-content"> 
+        <input type="number" id="fpn" name="fpn" [(ngModel)]="fpnValue" required>
+        <button mat-raised-button class="valider-btn"(click)="updateFpnS()" >Valider</button>
+      </div>
+
+      <div *ngIf="donnee!=null" class="center-content">
+        <button mat-raised-button class="xml-button" (click)="generateXMLFile()">Génerer XML</button>
+      </div>
+      <br>  
+
+      <div *ngIf="showtable == true">
+      <div  class="table-container">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>NumSeqPers</th>
+              <th>Mois</th>
+              <th>Année</th>
+              <th>RubriqueId</th>
+              <th>ProfParticul</th>
+              <th>TypeIdBct</th>
+              <th>IdBct</th>
+              <th>TpBNA</th>
+              <th>PieceBNA</th>
+              <th>Nom</th>
+              <th>CodeActivite</th>
+              <th>SecteurActivite</th>
+              <th>Classe_T-1</th>
+              <th>Classe_T</th>
+              <th>Eng_T-1</th>
+              <th>Eng_T</th>
+              <th>Eng-direct_T_1</th>
+              <th>Eng_sig_T-1</th>
+              <th>découvert</th>
+              <th>FPN</th>
+              <th>Update</th>
+              <th>Delete</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let annexe of annexes">
+              <td>{{annexe.numSeqPers}}</td>
+              <td>{{annexe.mois}}</td>
+              <td>{{annexe.annee}}</td>
+              <td>{{annexe.rubriqueId}}</td>
+              <td>{{annexe.profParticul}}</td>
+              <td>{{annexe.typeIdBct}}</td>
+              <td>{{annexe.idBct}}</td>
+              <td>{{annexe.tpBNA}}</td>
+              <td>{{annexe.pieceBNA}}</td>
+              <td>{{annexe.nom}}</td>
+              <td>{{annexe.codeActivite}}</td>
+              <td>{{annexe.secteurActivite}}</td>
+              <td>{{annexe.classe_T_1}}</td>
+              <td>{{annexe.classeT}}</td>
+              <td>{{annexe.eng_T_1}}</td>
+              <td>{{annexe.eng_T}}</td>
+              <td>{{annexe.engDirect_T_1}}</td>
+              <td>{{annexe.engSig_T_1}}</td>
+              <td>{{annexe.decouvert}}</td>
+              <td>{{annexe.fpn}}</td>
+              <td>
+                <button  class="btn-update" >Update</button>
+              </td>
+              <td>
+                <button  class="btn-delete" >Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

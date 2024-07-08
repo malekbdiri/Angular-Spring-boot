@@ -1,0 +1,29 @@
+body {
+	background: hsl(218deg 50% 91%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+  }
+  
+  .card {
+	width: 60%;
+	text-align: center; 
+	padding: 2rem;
+  }
+  
+  .btn-user {
+	width: auto; 
+	padding: 0.75em 2em; 
+  }
+  
+  .img-fluid {
+	max-width: 100%;
+	height: auto;
+  }
+  
+  .rounded-circle {
+	border-radius: 50%; 
+  }
+  

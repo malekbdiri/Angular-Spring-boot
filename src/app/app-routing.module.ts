@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent} from './login/login.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AnnexeRptc480Component} from './annexe-rptc480/annexe-rptc480.component'
+import {CreerAnnexeComponent} from './creer-annexe/creer-annexe.component'
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'annexe-rptc480', component: AnnexeRptc480Component },
+  { path: 'creer-annexe', component: CreerAnnexeComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-const routes: Routes = [];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

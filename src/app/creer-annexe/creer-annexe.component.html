@@ -1,0 +1,106 @@
+
+<div class="form-container">
+    <form [formGroup]="annexeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Num Seq Pers</mat-label>
+        <input matInput formControlName="numSeqPers">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Mois</mat-label>
+        <input matInput formControlName="mois">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Année</mat-label>
+        <input matInput formControlName="annee">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Rubrique ID</mat-label>
+        <input matInput formControlName="rubriqueId">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Prof Particul</mat-label>
+        <input matInput formControlName="profParticul">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Type ID Bct</mat-label>
+        <input matInput formControlName="typeIdBct">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>ID Bct</mat-label>
+        <input matInput formControlName="idBct">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>TP BNA</mat-label>
+        <input matInput formControlName="tpBNA">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Piece BNA</mat-label>
+        <input matInput formControlName="pieceBNA">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Code Activité</mat-label>
+        <input matInput formControlName="codeActivite">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Secteur Activité</mat-label>
+        <input matInput formControlName="secteurActivite">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Classe T-1</mat-label>
+        <input matInput formControlName="classe_T_1">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Classe T</mat-label>
+        <input matInput formControlName="classeT">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Eng T-1</mat-label>
+        <input matInput formControlName="eng_T_1">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Eng T</mat-label>
+        <input matInput formControlName="eng_T">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Eng Direct T-1</mat-label>
+        <input matInput formControlName="engDirect_T_1">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Eng Sig T-1</mat-label>
+        <input matInput formControlName="engSig_T_1">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Découvert</mat-label>
+        <input matInput formControlName="decouvert">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>FPN</mat-label>
+        <input matInput formControlName="fpn">
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>

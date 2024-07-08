@@ -1,0 +1,40 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+:host {
+  .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+    color: #94a3b8; 
+  }}
+ul {
+  li {
+    list-style: none;
+  }
+}
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+.user {
+  font-size: 14px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0b0d26; 
+  color: #94a3b8; 
+  width: 125%; 
+}
+
+
+::ng-deep {
+  .mat-menu-content {
+    width: 160px;
+  }
+}

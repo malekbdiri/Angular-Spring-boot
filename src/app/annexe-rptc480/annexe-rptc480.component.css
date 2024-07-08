@@ -1,0 +1,177 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 260px;
+}
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer {
+  background:  #0b0d26;
+  color: #94a3b8; 
+}
+
+.content {
+  padding: 20px;
+}
+
+.annexe-rptc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.valider-button {
+  background-color: #1e90ff; 
+  color: white; 
+}
+
+.valider-button:hover {
+  background-color: #1c86ee; 
+}
+
+.valider-btn {
+  background-color: #303f9f; 
+  color: white; 
+}
+
+.valider-btn:hover {
+  background-color: #303f9f; 
+}
+
+.left-content {
+  display: flex;
+  justify-content: flex-end; /* Adjusted to align items to the right */
+  align-items: center;
+  gap: 10px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+:host {
+  .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+    color: #94a3b8; 
+  }
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+.user {
+  font-size: 14px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0b0d26; 
+  color: #94a3b8; 
+}
+
+::ng-deep {
+  .mat-menu-content {
+    width: 160px;
+  }
+}
+
+:host {
+  .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem; 
+    color: #818cf8; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+  }
+}
+
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+
+  img {
+    width: 200px;
+  }
+}
+
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+}
+
+.mat-list-item {
+  color: #94a3b8 !important;
+  font-size: 0.8rem;
+  height: 44px !important;
+  margin-bottom: 4px;
+
+  &:hover {
+    color: #f2f5f7 !important;
+  }
+}
+
+.mat-subheader {
+  color: #818cf8;
+  font-size: 0.99rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.valider-button,
+.xml-button {
+  background-color: #3f51b5; 
+  color: white;
+  text-align: left;
+}
+
+.valider-button:hover,
+.xml-button:hover {
+  background-color: #303f9f; 
+}
+.btn-update{
+  background-color: #ff8800; 
+}
+.btn-delete{
+  background-color: #d90505; 
+}
