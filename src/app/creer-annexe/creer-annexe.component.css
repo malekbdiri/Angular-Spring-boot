@@ -1,19 +1,70 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 260px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer {
+  background: #0b0d26;
+  color: #94a3b8;
+}
+
 .form-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  button {
-    display: block;
-    margin: 20px 0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fdfdfde3;
+  border-radius: 8px;
+}
+
+.form-title {
+  font-weight: bold;
+  color: #0b0d26;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background-color: #ffffff; 
+  border: 1px solid #000000; 
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #303f9f;
+  color: white;
+  width: 100px;
+}
+
+.btn-primary:hover {
+  background-color: #1e90ff;
+}

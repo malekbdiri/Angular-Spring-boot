@@ -1,106 +1,97 @@
-
-<div class="form-container">
-    <form [formGroup]="annexeForm" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label>Num Seq Pers</mat-label>
-        <input matInput formControlName="numSeqPers">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Mois</mat-label>
-        <input matInput formControlName="mois">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Année</mat-label>
-        <input matInput formControlName="annee">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Rubrique ID</mat-label>
-        <input matInput formControlName="rubriqueId">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Prof Particul</mat-label>
-        <input matInput formControlName="profParticul">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Type ID Bct</mat-label>
-        <input matInput formControlName="typeIdBct">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>ID Bct</mat-label>
-        <input matInput formControlName="idBct">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>TP BNA</mat-label>
-        <input matInput formControlName="tpBNA">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Piece BNA</mat-label>
-        <input matInput formControlName="pieceBNA">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Nom</mat-label>
-        <input matInput formControlName="nom">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Code Activité</mat-label>
-        <input matInput formControlName="codeActivite">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Secteur Activité</mat-label>
-        <input matInput formControlName="secteurActivite">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Classe T-1</mat-label>
-        <input matInput formControlName="classe_T_1">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Classe T</mat-label>
-        <input matInput formControlName="classeT">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Eng T-1</mat-label>
-        <input matInput formControlName="eng_T_1">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Eng T</mat-label>
-        <input matInput formControlName="eng_T">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Eng Direct T-1</mat-label>
-        <input matInput formControlName="engDirect_T_1">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Eng Sig T-1</mat-label>
-        <input matInput formControlName="engSig_T_1">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>Découvert</mat-label>
-        <input matInput formControlName="decouvert">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <mat-label>FPN</mat-label>
-        <input matInput formControlName="fpn">
-      </mat-form-field>
-      
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </form>
-  </div>
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="col-md-6 offset-md-3 form-container">
+      <h3 class="form-title">Ajouter Client</h3>
+      <form [formGroup]="annexeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="numSeqPers">NumSeqPers</label>
+          <input type="text" class="form-control" id="numSeqPers" formControlName="numSeqPers">
+        </div>
+        <div class="form-group">
+          <label for="mois">Mois</label>
+          <input type="text" class="form-control" id="mois" formControlName="mois">
+        </div>
+        <div class="form-group">
+          <label for="annee">Annee</label>
+          <input type="text" class="form-control" id="annee" formControlName="annee">
+        </div>
+        <div class="form-group">
+          <label for="rubriqueID">RubriqueID</label>
+          <select class="form-control" id="rubriqueID" formControlName="rubriqueId">
+            <option *ngFor="let id of data" [value]="id">{{ id }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="prof_particul">Prof_particul</label>
+          <input type="text" class="form-control" id="prof_particul" formControlName="profParticul">
+        </div>
+        <div class="form-group">
+          <label for="type_id_bct">Type_id_bct</label>
+          <input type="text" class="form-control" id="type_id_bct" formControlName="typeIdBct">
+        </div>
+        <div class="form-group">
+          <label for="id_bct">Id_BCT</label>
+          <input type="text" class="form-control" id="id_bct" formControlName="idBct">
+        </div>
+        <div class="form-group">
+          <label for="tp_bna">Tp_BNA</label>
+          <input type="text" class="form-control" id="tp_bna" formControlName="tpBNA">
+        </div>
+        <div class="form-group">
+          <label for="piece_bna">Piece_BNA</label>
+          <input type="text" class="form-control" id="piece_bna" formControlName="pieceBNA">
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" class="form-control" id="nom" formControlName="nom">
+        </div>
+        <div class="form-group">
+          <label for="code_activite">CodeActivite</label>
+          <input type="text" class="form-control" id="code_activite" formControlName="codeActivite">
+        </div>
+        <div class="form-group">
+          <label for="secteur_activite">SecteurActivite</label>
+          <input type="text" class="form-control" id="secteur_activite" formControlName="secteurActivite">
+        </div>
+        <div class="form-group">
+          <label for="classe_T_1">Classe_T_1</label>
+          <input type="text" class="form-control" id="classe_T_1" formControlName="classe_T_1">
+        </div>
+        <div class="form-group">
+          <label for="classe_T">Classe_T</label>
+          <input type="text" class="form-control" id="classe_T" formControlName="classeT">
+        </div>
+        <div class="form-group">
+          <label for="eng_T_1">Eng_T_1</label>
+          <input type="text" class="form-control" id="eng_T_1" formControlName="eng_T_1">
+        </div>
+        <div class="form-group">
+          <label for="eng_T">Eng_T</label>
+          <input type="text" class="form-control" id="eng_T" formControlName="eng_T">
+        </div>
+        <div class="form-group">
+          <label for="eng_direct_T_1">EngDirect_T_1</label>
+          <input type="text" class="form-control" id="eng_direct_T_1" formControlName="engDirect_T_1">
+        </div>
+        <div class="form-group">
+          <label for="eng_sig_T_1">Eng_sig_T_1</label>
+          <input type="text" class="form-control" id="eng_sig_T_1" formControlName="engSig_T_1">
+        </div>
+        <div class="form-group">
+          <label for="decouvert">Decouvert</label>
+          <input type="text" class="form-control" id="decouvert" formControlName="decouvert">
+        </div>
+        <div class="form-group">
+          <label for="fpn">FPN</label>
+          <input type="text" class="form-control" id="fpn" formControlName="fpn">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

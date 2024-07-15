@@ -1,4 +1,5 @@
 export interface Annexe480 {
+    id: number;  
     numSeqPers: any;
     mois: any;
     annee: any;

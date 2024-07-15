@@ -1,0 +1,89 @@
+<h2 mat-dialog-title class="dialog-title">Update Annexe</h2>
+<mat-dialog-content>
+  <form #updateForm="ngForm" class="update-form">
+    <div class="form-group">
+      <label>NumSeqPers</label>
+      <input type="text" [(ngModel)]="data.numSeqPers" name="numSeqPers">
+    </div>
+    <div class="form-group">
+      <label>Mois</label>
+      <input type="text" [(ngModel)]="data.mois" name="mois">
+    </div>
+    <div class="form-group">
+      <label>Année</label>
+      <input type="text" [(ngModel)]="data.annee" name="annee">
+    </div>
+    <div class="form-group">
+      <label>RubriqueId</label>
+      <input type="text" [(ngModel)]="data.rubriqueId" name="rubriqueId">
+    </div>
+    <div class="form-group">
+      <label>ProfParticul</label>
+      <input type="text" [(ngModel)]="data.profParticul" name="profParticul">
+    </div>
+    <div class="form-group">
+      <label>typeIdBct</label>
+      <input type="text" [(ngModel)]="data.typeIdBct" name="typeIdBct">
+    </div>
+    <div class="form-group">
+      <label>IdBCT</label>
+      <input type="text" [(ngModel)]="data.idBct" name="idBct">
+    </div>
+    <div class="form-group">
+      <label>TpBNA</label>
+      <input type="text" [(ngModel)]="data.tpBNA" name="tpBNA">
+    </div>
+    <div class="form-group">
+      <label>PieceBNA</label>
+      <input type="text" [(ngModel)]="data.pieceBNA" name="pieceBNA">
+    </div>
+    <div class="form-group">
+      <label>Nom</label>
+      <input type="text" [(ngModel)]="data.nom" name="nom">
+    </div>
+    <div class="form-group">
+      <label>codeActivite</label>
+      <input type="text" [(ngModel)]="data.codeActivite" name="codeActivite">
+    </div>
+    <div class="form-group">
+      <label>secteurActivite</label>
+      <input type="text" [(ngModel)]="data.secteurActivite" name="secteurActivite">
+    </div>
+    <div class="form-group">
+      <label>classe_T_1</label>
+      <input type="text" [(ngModel)]="data.classe_T_1" name="classe_T_1">
+    </div>
+    <div class="form-group">
+      <label>classeT</label>
+      <input type="text" [(ngModel)]="data.classeT" name="classeT">
+    </div>
+    <div class="form-group">
+      <label>eng_T_1</label>
+      <input type="text" [(ngModel)]="data.eng_T_1" name="eng_T_1">
+    </div>
+    <div class="form-group">
+      <label>eng_T</label>
+      <input type="text" [(ngModel)]="data.eng_T" name="eng_T">
+    </div>
+    <div class="form-group">
+      <label>engDirect_T_1</label>
+      <input type="text" [(ngModel)]="data.engDirect_T_1" name="engDirect_T_1">
+    </div>
+    <div class="form-group">
+      <label>engSig_T_1</label>
+      <input type="text" [(ngModel)]="data.engSig_T_1" name="engSig_T_1">
+    </div>
+    <div class="form-group">
+      <label>Decouvert</label>
+      <input type="text" [(ngModel)]="data.decouvert" name="decouvert">
+    </div>
+    <div class="form-group">
+      <label>FPN</label>
+      <input type="number" [(ngModel)]="data.fpn" name="fpn">
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="btn-save" (click)="onSave()">Save</button>
+  <button mat-button class="btn-cancel" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions>

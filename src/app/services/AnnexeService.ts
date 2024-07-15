@@ -21,14 +21,17 @@ export class AnnexeService {
   generateXML(mois: number, annee: number): Observable<Blob> {
     return this.http.get(`${this.baseUrl1}/generateXML/${mois}/${annee}`, { responseType: 'blob' });
   }
+  ajouterAnnexe(annexe: Annexe480): Observable<any> {
+    return this.http.post(`${this.baseUrl}/annexes`, annexe);
+  }
 
   updateFpn(fpn: number, mois: number, annee: number ): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/updatefpn/${mois}/${annee}/${fpn}`);
   }
-  updateAnnexe(id: number, annexe: Annexe480): Observable<Object>{
+
+  updateAnnexe(id: number, annexe: Annexe480): Observable<any> {
     return this.http.put(`${this.baseUrl}/update/${id}`, annexe);
   }
-  
   deleteAnnexe(id: number): Observable<Object>{
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }

@@ -7,6 +7,7 @@
 mat-drawer {
   width: 260px;
 }
+
 mat-drawer-container {
   height: 100%;
 }
@@ -29,10 +30,28 @@ mat-drawer {
 
 .valider-button {
   background-color: #1e90ff; 
-  color: white; 
+  color: white;
+  font-size: 1rem; 
+  padding: 8px 16px; 
 }
 
 .valider-button:hover {
+  background-color: #1c86ee; 
+}
+.xml-button {
+  background-color: #1e90ff; 
+  color: white;
+  font-size: 1rem; 
+  padding: 6px 12px; 
+}
+.excel-button {
+  background-color: #1e90ff; 
+  color: white;
+  font-size: 1rem; 
+  padding: 6px 12px; 
+}
+
+.xml-button:hover {
   background-color: #1c86ee; 
 }
 
@@ -47,7 +66,7 @@ mat-drawer {
 
 .left-content {
   display: flex;
-  justify-content: flex-end; /* Adjusted to align items to the right */
+  justify-content: flex-end; 
   align-items: center;
   gap: 10px;
 }
@@ -66,6 +85,23 @@ mat-drawer {
   align-items: center;
   flex-direction: column;
   gap: 10px;
+}
+
+.date-section {
+  background-color: #e9e8e8c5; 
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.date-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.date-input {
+  font-size: 1rem; 
+  padding: 5px 10px; 
 }
 
 mat-toolbar {
@@ -154,7 +190,7 @@ mat-toolbar {
 .mat-subheader {
   color: #818cf8;
   font-size: 0.99rem;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 1px;
 }
 
@@ -169,9 +205,24 @@ mat-toolbar {
 .xml-button:hover {
   background-color: #303f9f; 
 }
-.btn-update{
+
+.btn-update {
   background-color: #ff8800; 
 }
-.btn-delete{
+
+.btn-delete {
   background-color: #d90505; 
+}
+
+.excel-button,
+.valider-button,
+.excel-button {
+  background-color: #3f51b5; 
+  color: white;
+  text-align: left;
+}
+
+.valider-button:hover,
+.excel-button:hover {
+  background-color: #303f9f; 
 }

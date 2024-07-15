@@ -1,0 +1,42 @@
+.dialog-title {
+    font-weight: bold;
+  }
+  
+  .update-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-save {
+    background-color: #4caf50;
+    color: white;
+    margin-right: auto;
+  }
+  
+  .btn-cancel {
+    background-color: #f44336;
+    color: white;
+    margin-left: auto;
+  }
+  

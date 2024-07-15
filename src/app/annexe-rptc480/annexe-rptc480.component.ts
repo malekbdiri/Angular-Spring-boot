@@ -3,7 +3,10 @@ import { DatePipe } from '@angular/common';
 import { AnnexeService } from '../services/AnnexeService';  
 import { Annexe480 } from '../models/Annexe480';
 import { AuthService } from '../services/AuthService';
-
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateAnnexeComponent } from '../update-annexe/update-annexe.component';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-annexe-rptc480',
@@ -12,7 +15,6 @@ import { AuthService } from '../services/AuthService';
 })
 export class AnnexeRptc480Component implements OnInit {
 
-
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
   sideBarOpen = true;
   selectedDate: any;
@@ -20,8 +22,14 @@ export class AnnexeRptc480Component implements OnInit {
   annexes: Annexe480[] = [];
   donnee:any;
   fpnValue: any;
+  fpnZero: boolean = false;
 
-  constructor(private datePipe: DatePipe, private annexeService: AnnexeService,private authService: AuthService) {
+  constructor(
+    private datePipe: DatePipe, 
+    private annexeService: AnnexeService,
+    private authService: AuthService, 
+    private router: Router,
+    public dialog: MatDialog) {
     this.selectedDate = this.datePipe.transform(new Date(), "yyyy-MM-dd");
   }
 
@@ -49,6 +57,8 @@ export class AnnexeRptc480Component implements OnInit {
           this.annexes = data;
           this.showtable = true ;
           this.donnee = data;
+          this.fpnZero = data.some(annexe  => annexe.fpn === 0);
+
         },
         (error) => {
           
@@ -57,7 +67,7 @@ export class AnnexeRptc480Component implements OnInit {
       );
     }
   }
-  
+
   generateXMLFile() {
     if (this.selectedDate) {
       const date = new Date(this.selectedDate);
@@ -78,7 +88,28 @@ export class AnnexeRptc480Component implements OnInit {
       );
     }
   }
- 
+
+  generateExcelFile() {
+    const dataToExport = this.annexes.map(({ id, ...rest }) => rest);
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(dataToExport);
+    const workbook: XLSX.WorkBook = {
+      Sheets: { 'data': worksheet },
+      SheetNames: ['data']
+    };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    this.saveAsExcelFile(excelBuffer, 'annexe480');
+  }
+
+  private saveAsExcelFile(buffer: any, fileName: string): void {
+    const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+    const data: Blob = new Blob([buffer], { type: EXCEL_TYPE });
+    const downloadURL = window.URL.createObjectURL(data);
+    const link = document.createElement('a');
+    link.href = downloadURL;
+    link.download = `${fileName}.xlsx`;
+    link.click();
+  }
+
   updateFpnS(): void {
     if (this.selectedDate && this.fpnValue != null) {
       const date = new Date(this.selectedDate);
@@ -109,4 +140,28 @@ export class AnnexeRptc480Component implements OnInit {
     }
   }
 
+  deleteAnnexe(id: number, index: number): void {
+      this.annexeService.deleteAnnexe(id).subscribe(
+        response => {
+          console.log(response);
+          this.annexes.splice(index, 1);
+        },
+        error => {
+          console.error('ERROR!', error);
+        }
+      );
+  }
+
+  openUpdateDialog(annexe: Annexe480): void {
+    const dialogRef = this.dialog.open(UpdateAnnexeComponent, {
+      width: '500px',
+      data: annexe
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.getAnnexe480(result.mois, result.annee);
+      }
+    });
+  }
 }

@@ -24,8 +24,11 @@ import { DatePipe } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CreerAnnexeComponent } from './creer-annexe/creer-annexe.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { UpdateAnnexeComponent } from './update-annexe/update-annexe.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -37,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidenavComponent,
     DashboardComponent,
     AnnexeRptc480Component,
-    CreerAnnexeComponent
+    CreerAnnexeComponent,
+    UpdateAnnexeComponent
     
   ],
   imports: [
@@ -57,6 +61,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatExpansionModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    TableModule,
+    PaginatorModule
+
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
